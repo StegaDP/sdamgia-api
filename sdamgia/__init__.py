@@ -94,8 +94,8 @@ class SdamGIA:
             pass
 
         try:
-            ANSWER = probBlock.find(
-                'div', {'class': 'answer'}).text.replace('Ответ: ', '')
+            ANSWER = probBlock.find_all(
+                'div', class_='answer')[-1].text.replace('Ответ: ', '')
         except IndexError:
             pass
         except AttributeError:
